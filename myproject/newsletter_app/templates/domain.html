@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+{{domain.name}}
+{% endblock title%}
+
+{% block styel%}
+
+<!-- <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen"> -->
+<link rel="stylesheet" href="{% static 'css/domain.css' %}" media="screen">
+<script>
+  function call_counter(url) {
+    $.get(url, function (data) {
+    });
+  }
+</script>
+{% endblock styel%}
+{% block content %}
+
+<!-- <div class="container"> -->
+<section class="domain bg-dark">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-lg-6">
+        <h1 style="text-transform:uppercase">{{domain.name}}</h1>
+        <p>{{domain.description}}</p>
+      </div>
+
+
+      <div class="col-lg-6 d-flex justify-content-center">
+        <img class="domain-img" src="../../media/{{domain.photo}}" alt="{{domain.name}}"
+          class="d-block w-100 carousel-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class='articles'>
+
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="articles-header-container">
+        <h2 class="articles-header-h2">Articles</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% for article in articles%}
+      <div class="col-lg-4 card_container d-flex justify-content-center">
+        <div class="card">
+          <img class="card-img-top" src="../../media/{{article.lead}}" alt="{{article.title}}">
+          <div class="card-body">
+            <h5 class="card-title" style="text-transform:uppercase">{{article.title}}</h5>
+            <p class="card-text">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>{{article.created_at|date:"Y-m-d"}}</p>
+              </div>
+              <div class="col-sm-6">
+                <a href="#" class="snip1348" data-bs-toggle="modal" data-bs-target="#article{{article.id}}">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="modal-section">
+  {% for article in articles%}
+  <div class="modal fade" id="article{{article.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-transform:uppercase">{{article.title}}
+                </h5>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center">
+                <p>{{article.domain}}</p>
+              </div>
+
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex justify-content-center">
+                <img class="article-lead" src="../../media/{{article.lead}}" alt="{{article.title}}">
+              </div>
+              <div class="col-lg-6">
+                <p class="article-descrption">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p>publiser:
+                  {% for publisher in article.publisher.all %}
+                  +{{publisher}}
+                  {% endfor %}
+                  </br>
+                  publication date: {{article.publication_date}}</p>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center">
+                {% url 'newsletter_app:add_view' article_id=article.id as temp %}
+                <a class="snip1535" href="../../media/{{article.article_file}}" onclick="call_counter('{{temp}}');"
+                  download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              {% for contributor in article.contributor.all %}
+              <div class="col-lg-4">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</section>
+{% endblock %}

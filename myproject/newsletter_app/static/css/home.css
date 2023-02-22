@@ -1,0 +1,310 @@
+.home-domain {
+  background-image: url("../images/bk3_about.jpg");
+  background-position: 50% 50%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.home-domain h1 {
+  background-color: #333333;
+  color: white;
+  font-weight: bold;
+  padding: 1% 3%;
+  margin-top: 20px;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.home-domain .card {
+  margin-bottom: 10%;
+  margin: 2% 1% 2% 1%;
+  /*height: 280px !important;*/
+  overflow: hidden;
+}
+
+.home-domain img {
+  height: 232px;
+  margin-bottom: 5px;
+}
+
+.home-domain .card-title {
+  font-weight: bold;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.snip1491 {
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  background-color: #1A1A1A;
+}
+
+.snip1491 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.snip1491 img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.snip1491 figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 30px;
+  background-color: #202123;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.snip1491 h2,
+.snip1491 h3,
+.snip1491 p {
+  margin: 0;
+}
+
+.snip1491 h2,
+.snip1491 h3 {
+  font-family: 'Slabo 27px', serif;
+  line-height: 1.2em;
+}
+
+.snip1491 h2 {
+  font-size: 1.9em;
+  color: #9b59b6;
+}
+
+.snip1491 h3 {
+  color: #EBEBEB;
+  font-size: 1.3em;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.snip1491 p {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9em;
+  margin-top: 12px;
+  padding: 12px 0 15px;
+  line-height: 1.5em;
+}
+
+.snip1491 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.snip1491:hover>img,
+.snip1491.hover>img {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.snip1491:hover figcaption,
+.snip1491.hover figcaption {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+.articles img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.modal-section .article-lead {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content p,
+.modal-content h5 {
+  color: #FFF;
+}
+
+.modal-content .article-descrption {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.modal-header p,
+.modal-header a {
+  color: #9b59b6 !important;
+}
+.modal-header p{
+  max-height: 50px !important;
+  overflow-y: scroll;
+}
+.modal-title{
+  font-size: 15px;
+  color: #9b59b6 !important; 
+}
+
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+
+.snip1535 {
+  background-color: #9b59b6;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  max-height: 38px;
+}
+
+.snip1535:before,
+.snip1535:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+
+.snip1535:before {
+  border-color: #9b59b6;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+
+.snip1535:after {
+  border-bottom-width: 2px;
+  border-color: #9b59b6;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+
+.snip1535:hover,
+.snip1535.hover {
+  background-color: #9b59b6;
+  color: #FFF;
+  text-decoration: none;
+
+}
+
+.snip1535:hover:before,
+.snip1535.hover:before,
+.snip1535:hover:after,
+.snip1535.hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+.snip1578 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 215px;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.snip1578 *,
+.snip1578:before,
+.snip1578:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.snip1578 img {
+  width: 35%;
+  height: 80px;
+  margin-top: -15px;
+  margin-left: 60%;
+  margin-bottom: 15px;
+  backface-visibility: hidden;
+  vertical-align: top;
+  border-radius: 5px;
+}
+
+.snip1578 figcaption {
+  position: absolute;
+  top: 0;
+  right: 40%;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+}
+
+.snip1578 a {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+.carousel-inner p{
+  color: #FFF;
+}
+.carousel-inner h1{
+  color: #9b59b6;
+  font-size: 20px;
+  font-weight: bold;
+}
+.carousel-inner{
+  padding-bottom: 30px;
+}
+.carousel-img{
+  max-height: 220px;
+  margin-bottom: 30px !important;
+  margin-top: 30px !important;
+}
+.carousel-indicators button{
+  width: 30px !important;
+  margin: 0px 1px;
+}
+
+.carousel-item p{
+  height: 150px !important;
+  overflow-y: auto;
+}

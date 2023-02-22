@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+Home
+{% endblock title%}
+
+{% block styel%}
+<!-- <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen"> -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}" media="screen">
+
+<script>
+  function call_counter(url) {
+      $.get(url, function (data) {
+      });
+  }
+</script>
+{% endblock styel%}
+{% block content %}
+
+<section>
+  <!-- Carousel -->
+  <div id="demo" class="carousel slide bg-dark" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner container">
+      <div class="carousel-item active ">
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="media/{{latest_articles.0.lead}}" alt="{{latest_articles.0.title}}"
+              class="d-block w-100 carousel-img">
+            <div class="row d-flex align-items-center justify-content-center">
+              <a href="#" class="snip1535" data-bs-toggle="modal" data-bs-target="#article{{latest_articles.0.id}}">See
+                details</a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h1 style="text-transform:uppercase">{{latest_articles.0.title}}</h1>
+            <p>{{latest_articles.0.abstruct_problem}}</br>{{latest_articles.0.abstruct_contribution}}</p>
+            <div class="row">
+              {% for contributor in latest_articles.0.contributor.all %}
+              <div class="col-lg-4 d-flex justify-content-center">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item ">
+        <div class="row ">
+          <div class="col-lg-4 ">
+            <img src="media/{{latest_articles.1.lead}}" alt="{{latest_articles.1.title}}"
+              class="d-block w-100 carousel-img">
+            <div class="row d-flex align-items-center justify-content-center">
+              <a href="#" class="snip1535" data-bs-toggle="modal" data-bs-target="#article{{latest_articles.1.id}}">See
+                details</a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h1 style="text-transform:uppercase">{{latest_articles.1.title}}</h1>
+            <p>{{latest_articles.1.abstruct_problem}}</br>{{latest_articles.1.abstruct_contribution}}</p>
+            <div class="row">
+              {% for contributor in latest_articles.1.contributor.all %}
+              <div class="col-lg-4 d-flex justify-content-center">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="media/{{latest_articles.2.lead}}" alt="{{latest_articles.2.title}}"
+              class="d-block w-100 carousel-img">
+            <div class="row d-flex align-items-center justify-content-center">
+              <a href="#" class="snip1535" data-bs-toggle="modal" data-bs-target="#article{{latest_articles.2.id}}">See
+                details</a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h1 style="text-transform:uppercase">{{latest_articles.2.title}}</h1>
+            <p>{{latest_articles.2.abstruct_problem}}</br>{{latest_articles.2.abstruct_contribution}}</p>
+            <div class="row">
+              {% for contributor in latest_articles.2.contributor.all %}
+              <div class="col-lg-4 d-flex justify-content-center">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="modal-section">
+  {% for article in latest_articles%}
+  <div class="modal fade" id="article{{article.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-transform:uppercase">{{article.title}}
+                </h5>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center">
+                <a href="{% url 'newsletter_app:domain' domain_id=article.domain.id %}">{{article.domain}}</a>
+              </div>
+
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex justify-content-center">
+                <img class="article-lead" src="../../media/{{article.lead}}" alt="{{article.title}}">
+              </div>
+              <div class="col-lg-6">
+                <p class="article-descrption">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p>publiser:
+                  {% for publisher in article.publisher.all %}
+                  +{{publisher}}
+                  {% endfor %}
+                  </br>
+                  publication date: {{article.publication_date}}</p>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center">
+                {% url 'newsletter_app:add_view' article_id=article.id as temp %}
+                  <a class="snip1535" href="../../media/{{article.article_file}}"  onclick="call_counter('{{temp}}');"
+                    download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
+                  </a>
+              </div>
+            </div>
+            <div class="row">
+              {% for contributor in article.contributor.all %}
+              <div class="col-lg-4">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</section>
+
+
+
+
+<section class='home-domain'>
+
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h1 class="col-xs-3 d-flex justify-content-center">Research Domains</h1>
+    </div>
+    <div class="row">
+      {% for domain in domains %}
+      <div class="col-lg-4 d-flex justify-content-center">
+        <figure class="snip1491">
+          <img src="media/{{domain.photo}}" alt="{{domain.name}}" />
+          <figcaption>
+            <h2>{{domain.name}}</h2>
+            <p>{{domain.description}}</p>
+          </figcaption>
+          <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
+        </figure>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

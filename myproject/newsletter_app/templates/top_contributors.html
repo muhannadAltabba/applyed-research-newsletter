@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+Top contributors
+{% endblock title%}
+
+{% block styel%}
+<link rel="stylesheet" href="{% static 'css/top_contributors.css' %}" media="screen">
+{% endblock styel%}
+{% block content %}
+
+<section class='top_contributors'>
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="contributors-header-container">
+        <h2 class="contributors-header-h2">TOP CONTRIBUTORS</h2>
+      </div>
+    </div>
+
+    <div class="row ">
+      {% for contributor in contributors_info %}
+      <div class="col-lg-3 d-flex justify-content-center">
+        <figure class="snip1515 ">
+          <div class="profile-image">
+            <img class="" src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" width="175px" height="175px"/>
+          </div>
+          <figcaption>
+            <h3>{{contributor.name}}</h3>
+            <h4> -----</h4>
+            <p>contributed {{contributor.contributor_article_count}} articles</p>
+            <p>Section: {{contributor.section}}</p>
+            <div class="d-flex justify-content-center">
+              <button class="snip1535">Profile</button>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+
+</section>
+
+
+
+{% endblock content %}

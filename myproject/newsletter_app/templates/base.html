@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" media="screen">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>{% block title %}{% endblock title %}</title>
+  {% block styel %}
+
+  {% endblock styel %}
+
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+
+
+  <header class="" id="sec-c1b0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse float-right" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll snip1217" style="--bs-scroll-height: 100px;">
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'newsletter_app:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'newsletter_app:top_viewed' %}">Top Viewed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'newsletter_app:top_contributors' %}">Top Contributors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'newsletter_app:about' %}">Join Us</a>
+            </li>
+          </ul>
+        </div>
+        <img src="{% static 'images/logo.jpg' %}" class="navbar-brand" width="60px">
+
+      </div>
+    </nav>
+
+  </header>
+  {% block content %}
+  {% endblock %}
+
+  <footer class="bg-dark text-center text-lg-start ">
+    <div class="text-center p-3" style="color: rgba(255,255,255,.5);">
+      Website Mockup created by R&D team
+    </div>
+  </footer>
+
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

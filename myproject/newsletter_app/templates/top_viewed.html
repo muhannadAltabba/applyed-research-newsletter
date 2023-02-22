@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+top viewed
+{% endblock title%}
+
+{% block styel%}
+<link rel="stylesheet" href="{% static 'css/top_viewed.css' %}" media="screen">
+<script>
+  function call_counter(url) {
+      $.get(url, function (data) {
+      });
+  }
+</script>
+{% endblock styel%}
+{% block content %}
+
+<div class='top_contributors'>
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <div class="contributors-header-container">
+        <h2 class="contributors-header-h2">TOP VIEWED</h2>
+      </div>
+    </div>
+
+
+    <section class='articles'>
+      <div class="container">
+        <div class="row">
+          {% for article in articles%}
+          <div class="col-lg-4 card_container d-flex justify-content-center">
+            <div class="card">
+              <img class="card-img-top" src="../../media/{{article.lead}}" alt="{{article.title}}">
+              <div class="card-body">
+                <h5 class="card-title" style="text-transform:uppercase">{{article.title}}</h5>
+                <p class="card-text">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}</p>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p>{{article.created_at|date:"Y-m-d"}}</p>
+                  </div>
+                  <div class="col-sm-6">
+                    <a href="#" class="snip1348" data-bs-toggle="modal" data-bs-target="#article{{article.id}}">See
+                      more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<section class="modal-section">
+  {% for article in articles%}
+  <div class="modal fade" id="article{{article.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex justify-content-center">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-transform:uppercase">{{article.title}}
+                </h5>
+              </div>
+              <div class="col-lg-6">
+                <a href="{% url 'newsletter_app:domain' domain_id=article.domain.id %}">{{article.domain}}</a>
+              </div>
+
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex justify-content-center">
+                <img class="article-lead" src="../../media/{{article.lead}}" alt="{{article.title}}">
+              </div>
+              <div class="col-lg-6">
+                <p class="article-descrption">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p>publiser:
+                  {% for publisher in article.publisher.all %}
+                  +{{publisher}}
+                  {% endfor %}
+                  </br>
+                  publication date: {{article.publication_date}}</p>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center">
+                {% url 'newsletter_app:add_view' article_id=article.id as temp %}
+                <a class="snip1535" href="../../media/{{article.article_file}}" onclick="call_counter('{{temp}}');"
+                  download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              {% for contributor in article.contributor.all %}
+              <div class="col-lg-4">
+                <figure class="snip1578">
+                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                  <figcaption>
+                    <a>{{contributor}}</a>
+                  </figcaption>
+                </figure>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</section>
+
+
+
+
+{% endblock content %}

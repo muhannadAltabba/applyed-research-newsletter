@@ -1,0 +1,349 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+About
+{% endblock title%}
+
+{% block styel%}
+<link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/about.css' %}" media="screen">
+
+{% endblock styel%}
+
+{% block content %}
+
+
+<section class="u-clearfix u-image u-shading u-section-1" id="sec-51a2" data-image-width="1669"
+  data-image-height="1080">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <h2 class="u-text u-text-1">Newsletter&nbsp;</h2>
+    <p class="u-text u-text-grey-30 u-text-2">This newsletter aims to share the latest technologies accross multiple
+      domains that are related to Syriatel's scope of work.<br>The main vision is to be able to share the state of the
+      art and technologies that can potentially benefit Syriatel in the future and keep employees up to date.&nbsp;
+    </p>
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div
+            class="u-container-style u-layout-cell u-size-26-lg u-size-26-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-3">Quick statistical overview on
+                the available articles.</h3>
+            </div>
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-34-lg u-size-34-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-2">
+              <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                      <h3 class="u-custom-font u-font-montserrat u-text u-text-palette-3-base u-text-4"
+                        data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
+                        {{articles_count}}</h3>
+                      <h6 class="u-custom-font u-font-montserrat u-text u-text-5">Articles</h6>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
+                      <h3 class="u-custom-font u-font-montserrat u-text u-text-palette-3-base u-text-6"
+                        data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
+                        {{domains_count}}</h3>
+                      <h6 class="u-custom-font u-font-montserrat u-text u-text-7">Contributors</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="accordion" id="accordionExample">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="accordion-header-container">
+        <h2 class="accordion-header-h2">How to publish</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingOne">
+          <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#​title"
+            aria-expanded="true" aria-controls="collapseOne">
+            1.&nbsp;​THE TITLE
+          </a>
+        </h2>
+        <div id="​title" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>It’s important to use the title to tell the reader what your paper is all about! You want to attract
+              their attention, a bit like a newspaper headline does. Be specific and to the point. Keep it informative
+              and concise, and avoid jargon and abbreviations (unless they are universally recognized like DNA, for
+              example).</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingTwo">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#abstruct"
+            aria-expanded="false" aria-controls="collapseTwo">
+            2. ​THE ABSTRACT
+          </a>
+        </h2>
+        <div id="abstruct" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>This could be termed as the “advertisement” for your article. Make it interesting and easily understood
+              without the reader having to read the whole article.&nbsp;Be accurate and specific, and keep it as brief
+              and concise as possible. Some journals (particularly in the medical fields) will ask you to structure the
+              abstract in distinct, labeled sections, which makes it even more accessible.</br>
+              A clear abstract will influence whether or not your work is considered and whether an editor should invest
+              more time on it or send it for review.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#keywords"
+            aria-expanded="false" aria-controls="collapseThree">
+            3. ​KEYWORDS
+          </a>
+        </h2>
+        <div id="keywords" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Keywords are used by abstracting and indexing services, such as PubMed and Web of Science. They are the
+              labels of your manuscript, which make it ‘searchable’ online by other researchers.<br />
+              Include words or phrases (usually 4-8) that are closely related to your topic but not “too niche” for
+              anyone to find them. Make sure to only use established abbreviations. Think about what scientific terms
+              and its variations your potential readers are likely to use and search for. You can also do a test run of
+              your selected keywords in one of the common academic search engines. Do similar articles to your own
+              appear? Yes? Then that’s a good sign.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#inroduction"
+            aria-expanded="false" aria-controls="collapseThree">
+            4. ​INTRODUCTION
+          </a>
+        </h2>
+        <div id="inroduction" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>This first part of the main text should introduce the problem, as well as any existing solutions you are
+              aware of and the main limitations. Also, state what you hope to achieve with your research.<br />
+              Do not confuse the introduction with the results, discussion or conclusion.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#methods"
+            aria-expanded="false" aria-controls="collapseThree">
+            5. ​METHODS
+          </a>
+        </h2>
+        <div id="methods" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Every research article should include a detailed Methods section (also referred to as “Materials and
+              Methods”) to provide the reader with enough information to be able to judge whether the study is valid
+              and&nbsp;reproducible.</br>
+              Include detailed information so that a knowledgeable reader can reproduce the experiment. However, use
+              references and supplementary materials to indicate previously published procedures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#result"
+            aria-expanded="false" aria-controls="collapseThree">
+            6. ​RESULTS
+          </a>
+        </h2>
+        <div id="result" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>In this section, you will present the essential or primary results of your study. To display them in a
+              comprehensible way, you should use subheadings as well as illustrations such as figures, graphs, tables
+              and photos, as appropriate. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#discussion"
+            aria-expanded="false" aria-controls="collapseThree">
+            7. ​DISCUSSION
+          </a>
+        </h2>
+        <div id="discussion" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Here you should tell your readers what the results&nbsp;mean.</br>
+              Do&nbsp;state how the results relate to the study’s aims and hypotheses and how the findings relate to
+              those of other studies. Explain all possible interpretations of your findings and the study’s
+              limitations.</br>
+              Do not&nbsp;make “grand statements” that are not supported by the data. Also, do not introduce any new
+              results or terms. Moreover, do not ignore work that conflicts or disagrees with your findings. Instead
+              …</br>
+              Be brave! Address conflicting study results and convince the reader you are the one who is correct.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#conclusion"
+            aria-expanded="false" aria-controls="collapseThree">
+            8. ​CONCLUSION
+          </a>
+        </h2>
+        <div id="conclusion" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Your conclusion isn’t just a summary of what you’ve already written. It should take your paper one step
+              further and answer any unresolved questions.</br>
+              Sum up what you have shown in your study and indicate possible applications and extensions. The main
+              question your conclusion should answer is: What do my results mean for the research field and my
+              community?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#statments"
+            aria-expanded="false" aria-controls="collapseThree">
+            9. ACKNOWLEDGMENTS AND ETHICAL STATEMENTS
+          </a>
+        </h2>
+        <div id="statments" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>t is extremely important to acknowledge&nbsp;anyone&nbsp;who has helped you with your paper, including
+              researchers who supplied materials or reagents (e.g. vectors or antibodies); and anyone who helped with
+              the writing or English, or offered critical comments about the content.</br>
+              Learn more about academic integrity in our blog post&nbsp;“Scholarly Publication Ethics: 4 Common Mistakes
+              You Want To Avoid”.</br>
+              Remember to state why people have been acknowledged and&nbsp;ask their permission. Ensure that you
+              acknowledge sources of funding, including any grant or reference numbers.</br>
+              Furthermore, if you have worked with animals or humans, you need to include information about the ethical
+              approval of your study and, if applicable, whether informed consent was given. Also, state whether you
+              have any competing interests regarding the study (e.g. because of financial or personal relationships.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#refrences"
+            aria-expanded="false" aria-controls="collapseThree">
+            10. ​REFERENCES
+          </a>
+        </h2>
+        <div id="refrences" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>The end is in sight, but don’t relax just yet!</br>
+              De facto, there are often more mistakes in the references than in any other part of the manuscript. It is
+              also one of the most annoying and time-consuming problems for editors.</br>
+              Remember to cite the main scientific publications on which your work is based. But do not inflate the
+              manuscript with too many references. Avoid excessive – and especially unnecessary – self-citations. Also,
+              avoid excessive citations of publications from the same institute or region.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#authors"
+            aria-expanded="false" aria-controls="collapseThree">
+            11. ​DECIDE THE ORDER OF AUTHORS
+          </a>
+        </h2>
+        <div id="authors" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>In the sciences, the most common way to order the names of the authors is by relative contribution.</br>
+              Generally, the first author conducts and/or supervises the data analysis and the proper presentation and
+              interpretation of the results. They put the paper together and usually submit the paper to the
+              journal.</br>
+              Co-authors make intellectual contributions to the data analysis and contribute to data interpretation.
+              They review each paper draft. All of them must be able to present the paper and its results, as well as to
+              defend the implications and discuss study limitations.</br>
+              Do not leave out authors who should be included or add “gift authors”, i.e. authors who did not contribute
+              significantly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#check"
+            aria-expanded="false" aria-controls="collapseThree">
+            12. ​CHECK AND DOUBLE-CHECK
+          </a>
+        </h2>
+        <div id="check" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>As a final step before submission, ask colleagues to read your work and&nbsp;be constructively
+              critical.</br>
+              Make sure that the paper is appropriate for the journal – take a last look at their aims and scope. Check
+              if all of the requirements in the instructions for authors are met.</br>
+              Ensure that the cited literature is balanced. Are the aims, purpose and significance of the results
+              clear?</br>
+              Conduct a final check for language, either by a native English speaker or an editing service.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item col-lg-6">
+        <h2 class="accordion-header" id="headingThree">
+          <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#submit_paper"
+            aria-expanded="false" aria-controls="collapseThree">
+            13. SUBMIT YOUR PAPER
+          </a>
+        </h2>
+        <div id="submit_paper" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>When you and your co-authors have double-, triple-, quadruple-checked the manuscript: submit it via
+              e-mail or online submission system. Along with your manuscript, submit a cover letter, which highlights
+              the reasons why your paper would appeal to the journal and which ensures that you have received approval
+              of all authors for submission.</br>
+              It is up to the editors and the peer-reviewers now to provide you with their (ideally constructive and
+              helpful) comments and feedback. Time to take a breather!</br>
+              If the paper gets rejected, do not despair – it happens to literally everybody. If the journal suggests
+              major or minor revisions, take the chance to provide a thorough response and make improvements as you see
+              fit. If the paper gets accepted, congrats!</br>
+              It’s now time to get writing and share your hard work – good luck!</p>
+          </div>
+        </div>
+      </div>
+      <a class="snip1535" href="{% static 'files/QuantumNetwork.pdf' %}" download="QuantumNetwork.pdf">download
+        templete </a>
+
+    </div>
+  </div>
+
+
+</section>
+<script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+
+{% endblock content %}
