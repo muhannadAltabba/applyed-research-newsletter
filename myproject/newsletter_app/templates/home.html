@@ -137,7 +137,7 @@ Home
                 <h5 class="modal-title" id="exampleModalLabel" style="text-transform:uppercase">{{article.title}}
                 </h5>
               </div>
-              <div class="col-lg-6 d-flex justify-content-center">
+              <div class="col-lg-6  d-flex justify-content-center align-items-center article-domain">
                 <a href="{% url 'newsletter_app:domain' domain_id=article.domain.id %}">{{article.domain}}</a>
               </div>
 
@@ -148,17 +148,17 @@ Home
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div class="col-lg-6 d-flex justify-content-center">
+              <!-- <div class="col-lg-6 d-flex justify-content-center">
                 <img class="article-lead" src="../../media/{{article.lead}}" alt="{{article.title}}">
-              </div>
-              <div class="col-lg-6">
+              </div> -->
+              <div class="col-lg-12">
                 <p class="article-descrption">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}
                 </p>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-6">
-                <p>publiser:
+                <p class="publiser">publiser:
                   {% for publisher in article.publisher.all %}
                   +{{publisher}}
                   {% endfor %}
@@ -167,14 +167,14 @@ Home
               </div>
               <div class="col-lg-6 d-flex justify-content-center">
                 {% url 'newsletter_app:add_view' article_id=article.id as temp %}
-                  <a class="snip1535" href="../../media/{{article.article_file}}"  onclick="call_counter('{{temp}}');"
+                  <a class="snip1533" href="../../media/{{article.article_file}}"  onclick="call_counter('{{temp}}');"
                     download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
                   </a>
               </div>
             </div>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
               {% for contributor in article.contributor.all %}
-              <div class="col-lg-4">
+              <div class="col-lg-4 d-flex justify-content-center">
                 <figure class="snip1578">
                   <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
                   <figcaption>
@@ -195,13 +195,13 @@ Home
 </section>
 
 
-
+<!-- 
 
 <section class='home-domain'>
 
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <h1 class="col-xs-3 d-flex justify-content-center">Research Domains</h1>
+      <h1 class="col-xs-3 d-flex justify-content-center">Research Fields</h1>
     </div>
     <div class="row">
       {% for domain in domains %}
@@ -219,5 +219,45 @@ Home
     </div>
   </div>
 </section>
+
+ -->
+
+<section class='home-domain'>
+
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h1 class="col-xs-3 d-flex justify-content-center">Research Fields</h1>
+    </div>
+    <div class="row">
+      {% for domain in domains %}
+      <div class="col-lg-4 d-flex justify-content-center">
+        <figure class="snip1518">
+          <div class="image"><img src="media/{{domain.photo}}" alt="{{domain.name}}" /></div>
+          <figcaption class="bg-dark">
+            <h5>{{domain.name}}</h5>
+            <!-- <h3>{{domain.description}}</h3> -->
+
+          </figcaption>
+          <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
+        </figure>
+        
+        <!-- <figure class="snip1491">
+          <img src="media/{{domain.photo}}" alt="{{domain.name}}" />
+          <figcaption>
+            <h2>{{domain.name}}</h2>
+            <p>{{domain.description}}</p>
+          </figcaption>
+          <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
+        </figure> -->
+      
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
 
 {% endblock content %}

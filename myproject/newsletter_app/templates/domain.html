@@ -22,16 +22,16 @@
   <div class="container">
     <div class="row d-flex justify-content-center">
 
-      <div class="col-lg-6">
-        <h1 style="text-transform:uppercase">{{domain.name}}</h1>
-        <p>{{domain.description}}</p>
+      <div class="col-lg-12 ">
+        <h3 class="d-flex justify-content-center" style="text-transform:uppercase">{{domain.name}}</h3>
+        <p class="d-flex justify-content-center">{{domain.description}}</p>
       </div>
 
 
-      <div class="col-lg-6 d-flex justify-content-center">
+      <!-- <div class="col-lg-6 d-flex justify-content-center">
         <img class="domain-img" src="../../media/{{domain.photo}}" alt="{{domain.name}}"
           class="d-block w-100 carousel-img">
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -40,11 +40,11 @@
 <section class='articles'>
 
   <div class="container">
-    <div class="row d-flex justify-content-center">
+    <!-- <div class="row d-flex justify-content-center">
       <div class="articles-header-container">
         <h2 class="articles-header-h2">Articles</h2>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       {% for article in articles%}
       <div class="col-lg-4 card_container d-flex justify-content-center">
@@ -53,14 +53,15 @@
           <div class="card-body">
             <h5 class="card-title" style="text-transform:uppercase">{{article.title}}</h5>
             <p class="card-text">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}</p>
-            <div class="row">
-              <div class="col-sm-6">
+            <a class="details" href="#" data-bs-toggle="modal" data-bs-target="#article{{article.id}}">see details</a>
+            <div class="created_at d-flex justify-content-end">
+              <!-- <div class="col-sm-6"> -->
                 <p>{{article.created_at|date:"Y-m-d"}}</p>
-              </div>
-              <div class="col-sm-6">
+              <!-- </div> -->
+              <!-- <div class="col-sm-6">
                 <a href="#" class="snip1348" data-bs-toggle="modal" data-bs-target="#article{{article.id}}">See
                   more</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -83,7 +84,7 @@
                 <h5 class="modal-title" id="exampleModalLabel" style="text-transform:uppercase">{{article.title}}
                 </h5>
               </div>
-              <div class="col-lg-6 d-flex justify-content-center">
+              <div class="col-lg-6 d-flex justify-content-center align-items-center article-domain">
                 <p>{{article.domain}}</p>
               </div>
 
@@ -94,17 +95,17 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div class="col-lg-6 d-flex justify-content-center">
+              <!-- <div class="col-lg-6 d-flex justify-content-center">
                 <img class="article-lead" src="../../media/{{article.lead}}" alt="{{article.title}}">
-              </div>
-              <div class="col-lg-6">
+              </div> -->
+              <div class="col-lg-12">
                 <p class="article-descrption">{{ article.abstruct_problem}}</br>{{article.abstruct_contribution}}
                 </p>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-6">
-                <p>publiser:
+                <p class="publiser">publiser:
                   {% for publisher in article.publisher.all %}
                   +{{publisher}}
                   {% endfor %}
@@ -118,19 +119,22 @@
                 </a>
               </div>
             </div>
-            <div class="row">
-              {% for contributor in article.contributor.all %}
-              <div class="col-lg-4">
-                <figure class="snip1578">
-                  <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
-                  <figcaption>
-                    <a>{{contributor}}</a>
-                  </figcaption>
-                </figure>
-              </div>
 
-              {% endfor %}
-            </div>
+            {% for contributor in article.contributor.all %}
+            <a href="{{contributor.sharepoint}}">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 d-flex justify-content-center">
+                  <figure class="snip1578">
+                    <img src="../../media/{{contributor.photo}}" alt="{{contributor.name}}" />
+                    <figcaption>
+                      <a>{{contributor}}</a>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
           </div>
         </div>
       </div>

@@ -41,10 +41,19 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'newsletter_app:top_contributors' %}">Top Contributors</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'newsletter_app:about' %}">Join Us</a>
-            </li>
           </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'newsletter_app:statistics' %}">Statistics</a></li>
+              <li><a class="dropdown-item" href="{% url 'newsletter_app:how_to_publish' %}">How To Publish</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
         </div>
         <img src="{% static 'images/logo.jpg' %}" class="navbar-brand" width="60px">
 

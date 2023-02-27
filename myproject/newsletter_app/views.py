@@ -5,12 +5,14 @@ from django.db.models import Count
 
 
 # Create your views here.
-def about(request):
+def statistics(request):
     articles_count = Article.objects.all().count()
     domains_count = Domain.objects.all().count()   
     content = {'articles_count': articles_count, 'domains_count':domains_count} 
-    return render(request, "about.html", content)
+    return render(request, "statistics.html", content)
 
+def how_to_publish(request):
+    return render(request, "how_to_publish.html")
 
 
 def home(request):

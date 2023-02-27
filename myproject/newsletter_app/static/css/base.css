@@ -112,6 +112,34 @@
 .snip1217 .current a:after {
   width: 100%;
 }
+.nav-item {
+  list-style: outside none none;
+  text-decoration: none;
+}
+.dropdown-toggle{
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.dropdown-toggle:hover{
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.dropdown-item{
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+.dropdown-item:hover{
+  background-color: #9b59b6;
+  color: #ffffff;
+}
 
 
 

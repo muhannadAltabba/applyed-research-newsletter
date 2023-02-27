@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+Statistics
+{% endblock title%}
+
+{% block styel%}
+<link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/statistics.css' %}" media="screen">
+
+{% endblock styel%}
+
+{% block content %}
+
+
+<section class="u-clearfix u-image u-shading u-section-1" id="sec-51a2" data-image-width="1669"
+  data-image-height="1080">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <h2 class="u-text u-text-1">Newsletter&nbsp;</h2>
+    <p class="u-text u-text-grey-30 u-text-2">This newsletter aims to share the latest technologies accross multiple
+      domains that are related to Syriatel's scope of work.<br>The main vision is to be able to share the state of the
+      art and technologies that can potentially benefit Syriatel in the future and keep employees up to date.&nbsp;
+    </p>
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div
+            class="u-container-style u-layout-cell u-size-26-lg u-size-26-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-3">Quick statistical overview on
+                the available articles.</h3>
+            </div>
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-34-lg u-size-34-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-2">
+              <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                      <h3 class="u-custom-font u-font-montserrat u-text u-text-palette-3-base u-text-4"
+                        data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
+                        {{articles_count}}</h3>
+                      <h6 class="u-custom-font u-font-montserrat u-text u-text-5">Articles</h6>
+                    </div>
+                  </div>
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
+                      <h3 class="u-custom-font u-font-montserrat u-text u-text-palette-3-base u-text-6"
+                        data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
+                        {{domains_count}}</h3>
+                      <h6 class="u-custom-font u-font-montserrat u-text u-text-7">Contributors</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+
+{% endblock content %}

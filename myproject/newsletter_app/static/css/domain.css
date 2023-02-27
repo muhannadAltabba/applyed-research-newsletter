@@ -1,5 +1,6 @@
  .articles {
    background-color: black;
+   padding-top: 30px;
  }
 
  .articles .card {
@@ -70,7 +71,7 @@
  }
 
  .articles .card {
-   height: 570px;
+   height: 590px;
    overflow: hidden;
    margin-bottom: 30px;
  }
@@ -91,9 +92,11 @@
  .articles .card-text {
    overflow: hidden;
    height: 120px;
+   margin-bottom: 0;
  }
+ 
 
-
+/* 
  @import url(https://fonts.googleapis.com/css?family=Raleway:300);
 
  .snip1348 {
@@ -104,7 +107,6 @@
    cursor: pointer;
    padding: 7px 20px 10px;
    display: inline-block;
-   /* margin: 12px 25px; */
    font-weight: 300;
    outline: none;
    position: relative;
@@ -113,7 +115,6 @@
    background-image: linear-gradient(to top, #262626 0px, #404040 10px, #262626 10px, #333333 100%);
    box-shadow: 1px 1px 2px -2px rgba(255, 255, 255, 0.8) inset, -1px -1px 2px -2px rgba(255, 255, 255, 0.3) inset, 1px 1px 4px rgba(0, 0, 0, 0.3);
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-   /* float: right; */
  }
 
  .snip1348:after {
@@ -141,47 +142,46 @@
    -webkit-transition: 0.05s;
    transition: 0.05s;
  }
-
- .snip1348:hover,
+*/
  .snip1535:hover {
    color: #FFF;
    text-decoration: none;
- }
+ } 
 
 
  @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 
  .snip1535 {
-   background-color: #9b59b6;
-   border: none;
-   color: #ffffff;
-   cursor: pointer;
-   display: inline-block;
-   font-family: 'BenchNine', Arial, sans-serif;
-   font-size: 1em;
-   font-size: 15px;
-   line-height: 1em;
-   margin: 15px 40px;
-   outline: none;
-   padding: 12px 40px 10px;
-   position: relative;
-   text-transform: uppercase;
-   font-weight: 700;
-   max-height: 35px;
- }
+  background-color: #9b59b6;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 10px;
+  line-height: 1em;
+  margin: 30px 40px;
+  outline: none;
+  padding: 8px 10px ;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  max-height: 38px;
+}
 
- .snip1535:before,
- .snip1535:after {
-   border-color: transparent;
-   -webkit-transition: all 0.25s;
-   transition: all 0.25s;
-   border-style: solid;
-   border-width: 0;
-   content: "";
-   height: 24px;
-   position: absolute;
-   width: 24px;
- }
+.snip1535:before,
+.snip1535:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
 
  .snip1535:before {
    border-color: #9b59b6;
@@ -212,7 +212,10 @@
    height: 100%;
    width: 100%;
  }
-
+ .publiser{
+  border-top: 1px solid #9b59b6;
+  padding-top: 15px;
+}
 
  .articles img {
    height: 200px;
@@ -299,10 +302,10 @@
   margin-top: 30px !important;
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
- .domain h1 {
+ .domain h3 {
    color: #9b59b6;
    margin-top: 20px;
-   padding: 20px;
+   padding: 10px;
    font-family: 'Open Sans', sans-serif;
    
 }
@@ -313,4 +316,16 @@
  .modal-title{
   font-size: 15px;
   color: #9b59b6 !important; 
+}
+
+.details{
+  color: #9b59b6;
+  /* margin-bottom: 40px !important; */
+}
+.details:hover {
+  color: #9b59b6;
+  /* text-decoration: none; */
+}
+.created_at{
+  margin-top: 10px;
 }

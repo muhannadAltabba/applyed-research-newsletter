@@ -5,12 +5,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .home-domain h1 {
-  background-color: #333333;
-  color: white;
+  /* background-color: ; */
+  color: #343a40;
   font-weight: bold;
   padding: 1% 3%;
-  margin-top: 20px;
-  font-size: 30px;
+  margin-top: 10px;
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -30,7 +30,7 @@
 .home-domain .card-title {
   font-weight: bold;
 }
-
+/* 
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
@@ -127,7 +127,7 @@
 .snip1491.hover figcaption {
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
-}
+} */
 
 .articles img {
   height: 200px;
@@ -168,7 +168,6 @@
 }
 
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
-
 .snip1535 {
   background-color: #9b59b6;
   border: none;
@@ -295,9 +294,13 @@
   padding-bottom: 30px;
 }
 .carousel-img{
-  max-height: 220px;
-  margin-bottom: 30px !important;
+  height: 220px;
+  margin-bottom: 10px !important;
   margin-top: 30px !important;
+  /* overflow: hidden; */
+}
+.carousel-img-container{
+  height: 220px;
 }
 .carousel-indicators button{
   width: 30px !important;
@@ -307,4 +310,148 @@
 .carousel-item p{
   height: 150px !important;
   overflow-y: auto;
+}
+.publiser{
+  border-top: 1px solid #9b59b6;
+  padding-top: 15px;
+}
+.details{
+  color: #9b59b6;
+  /* margin-bottom: 40px !important; */
+}
+.details:hover {
+  color: #9b59b6;
+  /* text-decoration: none; */
+}
+.created_at{
+  margin-top: 10px;
+}
+.snip1533:hover {
+  color: #FFF;
+  text-decoration: none;
+} 
+
+
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+
+.snip1533 {
+ background-color: #9b59b6;
+ border: none;
+ color: #ffffff;
+ cursor: pointer;
+ display: inline-block;
+ font-family: 'BenchNine', Arial, sans-serif;
+ font-size: 1em;
+ font-size: 10px;
+ line-height: 1em;
+ margin: 30px 40px;
+ outline: none;
+ padding: 8px 10px ;
+ position: relative;
+ text-transform: uppercase;
+ font-weight: 700;
+ max-height: 38px;
+}
+
+.snip1533:before,
+.snip1533:after {
+ border-color: transparent;
+ -webkit-transition: all 0.25s;
+ transition: all 0.25s;
+ border-style: solid;
+ border-width: 0;
+ content: "";
+ height: 10px;
+ position: absolute;
+ width: 10px;
+}
+
+.snip1533:before {
+  border-color: #9b59b6;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+
+.snip1533:after {
+  border-bottom-width: 2px;
+  border-color: #9b59b6;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+
+.snip1533:hover,
+.snip1533.hover {
+  background-color: #9b59b6;
+
+}
+
+.snip1533:hover:before,
+.snip1533.hover:before,
+.snip1533:hover:after,
+.snip1533.hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1518 {
+  font-family: 'Lato', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  /* margin: 10px; */
+  min-width: 250px;
+  max-width: 310px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #2B2B2B;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.snip1518 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.snip1518 img {
+  max-width: 100%;
+  width: 320px;
+  height: 120px;
+  vertical-align: top;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.snip1518 figcaption {
+  padding: 10%;
+  padding-bottom: calc(25%);
+  height: 100px;
+  overflow-y: hidden;
+  /* background-color: #ffffff; */
+}
+
+
+.snip1518 h5 {
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+
+.snip1518 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
 }
