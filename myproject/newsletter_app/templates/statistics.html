@@ -5,14 +5,58 @@ Statistics
 {% endblock title%}
 
 {% block styel%}
-<link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<!-- <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen"> -->
 <link rel="stylesheet" href="{% static 'css/statistics.css' %}" media="screen">
 
 {% endblock styel%}
 
 {% block content %}
 
+<section class="statistics bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="{% static 'images/about-vector1.svg' %}">
+      </div>
+      <div class="col-lg-6">
+        <h2>Newsletter</h2>
+        <p>This newsletter aims to share the latest technologies accross multiple
+          domains that are related to Syriatel's scope of work.<br>The main vision is to be able to share the state of the
+          art and technologies that can potentially benefit Syriatel in the future and keep employees up to date.&nbsp;
+        </p>
+        <h5>Quick statistical overview on the available articles.</h5>
+        <div class="row d-flex justify-content-center statistical">
+          <div class="col-lg-4 d-flex justify-content-center">
+            <h3>{{articles_count}}</h3>
+          </div>
+          <div class="col-lg-4 d-flex justify-content-center">
+            <h3>{{domains_count}}</h3>
+          </div>
+          <div class="col-lg-4 d-flex justify-content-center">
+            <h3>{{contributors_count}}</h3>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center ">
+          <div class="col-lg-4 d-flex justify-content-center">
+            <p>Articles</p>
+          </div>
+          <div class="col-lg-4 d-flex justify-content-center">
+            <p>Domains</p>
+          </div>
+          <div class="col-lg-4 d-flex justify-content-center">
+            <p>Contributors</p>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
+</section>
+
+
+<!-- 
 <section class="u-clearfix u-image u-shading u-section-1" id="sec-51a2" data-image-width="1669"
   data-image-height="1080">
   <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -60,11 +104,9 @@ Statistics
       </div>
     </div>
   </div>
-</section>
-
-
+</section> -->
 
 <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
-<script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+<!-- <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script> -->
 
 {% endblock content %}

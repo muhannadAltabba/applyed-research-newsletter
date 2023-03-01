@@ -1,3 +1,4 @@
+/* body{background-color: #343A40;} */
 .home-domain {
   background-image: url("../images/bk3_about.jpg");
   background-position: 50% 50%;
@@ -24,7 +25,7 @@
 
 .home-domain img {
   height: 232px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 
 .home-domain .card-title {
@@ -406,8 +407,8 @@
   position: relative;
   overflow: hidden;
   /* margin: 10px; */
-  min-width: 250px;
-  max-width: 310px;
+  /* min-width: 250px; */
+  /* max-width: 310px; */
   width: 100%;
   background-color: #ffffff;
   color: #2B2B2B;
@@ -454,4 +455,102 @@
   bottom: 0;
   position: absolute;
   z-index: 1;
+}
+
+
+
+/* .last-carousel-inner {
+  padding: 1em;
+}
+.last-card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #9b59b6;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .last-carousel-item {
+    margin-right: 0;
+    flex: 0 0 33.333333%;
+    display: block;
+  }
+  .last-carousel-inner {
+    display: flex;
+  }
+}
+.card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card img {
+    max-height: 100%;
+}
+@media (max-width: 767px) {
+  .card .img-wrapper {
+    height: 17em;
+  }
+} */
+
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33%);
+  }
+
+  .carousel-inner .carousel-item-start.active, 
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #9b59b6 !important;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card-img-overlay{
+  height: 60px;
+  background-color: rgba(52,58,64,0.9);
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 1px;
 }

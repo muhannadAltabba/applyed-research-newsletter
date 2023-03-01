@@ -8,7 +8,9 @@ from django.db.models import Count
 def statistics(request):
     articles_count = Article.objects.all().count()
     domains_count = Domain.objects.all().count()   
-    content = {'articles_count': articles_count, 'domains_count':domains_count} 
+    contributors_count = Contributor.objects.all().count()   
+
+    content = {'articles_count': articles_count, 'domains_count':domains_count, 'contributors_count':contributors_count} 
     return render(request, "statistics.html", content)
 
 def how_to_publish(request):

@@ -10,8 +10,8 @@ Home
 
 <script>
   function call_counter(url) {
-      $.get(url, function (data) {
-      });
+    $.get(url, function (data) {
+    });
   }
 </script>
 {% endblock styel%}
@@ -167,9 +167,9 @@ Home
               </div>
               <div class="col-lg-6 d-flex justify-content-center">
                 {% url 'newsletter_app:add_view' article_id=article.id as temp %}
-                  <a class="snip1533" href="../../media/{{article.article_file}}"  onclick="call_counter('{{temp}}');"
-                    download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
-                  </a>
+                <a class="snip1533" href="../../media/{{article.article_file}}" onclick="call_counter('{{temp}}');"
+                  download="{{article.article_file|make_list|slice:'13:'|join:'' }}">download
+                </a>
               </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -195,34 +195,8 @@ Home
 </section>
 
 
-<!-- 
 
-<section class='home-domain'>
-
-  <div class="container">
-    <div class="row d-flex justify-content-center">
-      <h1 class="col-xs-3 d-flex justify-content-center">Research Fields</h1>
-    </div>
-    <div class="row">
-      {% for domain in domains %}
-      <div class="col-lg-4 d-flex justify-content-center">
-        <figure class="snip1491">
-          <img src="media/{{domain.photo}}" alt="{{domain.name}}" />
-          <figcaption>
-            <h2>{{domain.name}}</h2>
-            <p>{{domain.description}}</p>
-          </figcaption>
-          <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
-        </figure>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
- -->
-
-<section class='home-domain'>
+<!-- <section class='home-domain'>
 
   <div class="container">
     <div class="row d-flex justify-content-center">
@@ -232,32 +206,90 @@ Home
       {% for domain in domains %}
       <div class="col-lg-4 d-flex justify-content-center">
         <figure class="snip1518">
-          <div class="image"><img src="media/{{domain.photo}}" alt="{{domain.name}}" /></div>
           <figcaption class="bg-dark">
             <h5>{{domain.name}}</h5>
-            <!-- <h3>{{domain.description}}</h3> -->
 
           </figcaption>
+          <div class="image"><img src="media/{{domain.photo}}" alt="{{domain.name}}" /></div>
+
           <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
         </figure>
-        
-        <!-- <figure class="snip1491">
-          <img src="media/{{domain.photo}}" alt="{{domain.name}}" />
-          <figcaption>
-            <h2>{{domain.name}}</h2>
-            <p>{{domain.description}}</p>
-          </figcaption>
-          <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}"></a>
-        </figure> -->
-      
+
       </div>
       {% endfor %}
     </div>
   </div>
+</section> -->
+
+
+
+
+
+<section class='home-domain'>
+
+  <div class="container text-center ">
+    <div class="row d-flex justify-content-center">
+      <h1 class="col-xs-3 d-flex justify-content-center">Research Fields</h1>
+    </div>
+    <div class="row mx-auto my-auto justify-content-center">
+      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="col-md-4">
+              <div class="card">
+                <a href="{% url 'newsletter_app:domain' domain_id=domains.0.id %}">
+
+                  <div class="card-img">
+                    <img src="media/{{domains.0.photo}}" alt="{{domains.0.name}}" class="img-fluid">
+                  </div>
+                  <div class="card-img-overlay">{{domains.0.name}}</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% for domain in domains %}
+          {% if  domains.0.id != domain.id%}
+
+          <div class="carousel-item">
+
+            <div class="col-md-4">
+              <a href="{% url 'newsletter_app:domain' domain_id=domain.id %}">
+
+                <div class="card">
+                  <div class="card-img">
+                    <img src="media/{{domain.photo}}" alt="{{domain.name}}" class="img-fluid">
+                  </div>
+                  <div class="card-img-overlay">{{domain.name}}</div>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+          {% endif %}
+
+          {% endfor %}
+        </div>
+        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 
 
 
+
+
+
+
+
+<script src="{% static 'js/home.js' %}"></script>
 
 {% endblock content %}
