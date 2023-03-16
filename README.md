@@ -1,1 +1,1 @@
-# applyed-research-newsletter
+# applied-research-newsletter
